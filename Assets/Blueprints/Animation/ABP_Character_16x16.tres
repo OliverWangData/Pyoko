@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="AnimationBlueprint" load_steps=5 format=3 uid="uid://duxfr657lsucw"]
+
+[ext_resource type="Script" uid="uid://bwl511djysnwm" path="res://Core/Rendering/Animations/AnimationInfo.cs" id="1_bosrl"]
+[ext_resource type="Script" uid="uid://cv8eod634r5sh" path="res://Core/Rendering/Animations/AnimationBlueprint.cs" id="2_vpkgk"]
+
+[sub_resource type="Resource" id="Resource_ih3ex"]
+script = ExtResource("1_bosrl")
+State = 0
+Fps = 2.0
+Size = Vector2(16, 16)
+Positions = PackedVector2Array(0, 0, 16, 0)
+
+[sub_resource type="Resource" id="Resource_3kosw"]
+script = ExtResource("1_bosrl")
+State = 1
+Fps = 8.0
+Size = Vector2(16, 16)
+Positions = PackedVector2Array(0, 16, 16, 16, 32, 16, 48, 16)
+
+[resource]
+script = ExtResource("2_vpkgk")
+Notes = ""
+Animations = Array[Object]([SubResource("Resource_ih3ex"), SubResource("Resource_3kosw")])

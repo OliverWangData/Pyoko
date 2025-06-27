@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://qnujng6lg60u"
+path="res://.godot/imported/BMP_Waypoint.png-8006523dab85dcea9fc426304cf750d8.res"
+
+[deps]
+
+source_file="res://Assets/World/Waypoint/BMP_Waypoint.png"
+dest_files=["res://.godot/imported/BMP_Waypoint.png-8006523dab85dcea9fc426304cf750d8.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

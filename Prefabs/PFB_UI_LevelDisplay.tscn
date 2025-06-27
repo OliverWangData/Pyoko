@@ -1,0 +1,162 @@
+[gd_scene load_steps=9 format=3 uid="uid://nf6jm5uenqx"]
+
+[ext_resource type="Script" uid="uid://dimd4vf68dkdm" path="res://UI/LevelDisplay.cs" id="1_kfrqt"]
+[ext_resource type="Texture2D" uid="uid://boe2veqkv6woa" path="res://_lib/Sprites/Shapes/SPR_Square_Rounded_R3.png" id="1_xdd30"]
+[ext_resource type="Texture2D" uid="uid://cuj2niix0nfvs" path="res://_lib/Sprites/Shapes/SPR_Square_Rounded_Empty_R3T1.png" id="2_yi24l"]
+[ext_resource type="Texture2D" uid="uid://cub3oheloec17" path="res://_lib/Sprites/Shapes/SPR_Dot.png" id="3_aewbb"]
+[ext_resource type="ButtonGroup" uid="uid://cr46d0a4qro0l" path="res://World/BTG_Waypoint.tres" id="3_yxhvx"]
+[ext_resource type="PackedScene" uid="uid://c6nqcph2d7k65" path="res://Prefabs/PFB_UI_ItemSlot.tscn" id="4_2wiim"]
+[ext_resource type="LabelSettings" uid="uid://bxj6i61oeb55m" path="res://Assets/Misc/LBST_Default.tres" id="6_efu1r"]
+[ext_resource type="PackedScene" uid="uid://dom3v00rw8mpy" path="res://Prefabs/PFB_UI_LevelDisplay_RewardDesc.tscn" id="7_gy35p"]
+
+[node name="LevelDisplay" type="MarginContainer" node_paths=PackedStringArray("nameLabel", "effectsContainer", "enemiesContainer", "rewardsContainer")]
+custom_minimum_size = Vector2(156, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -81.0
+offset_right = -324.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kfrqt")
+nameLabel = NodePath("Margin/Content [Margins]/VBoxContainer/Name - Label")
+itemSlotPrefab = ExtResource("4_2wiim")
+effectsContainer = NodePath("Margin/Content [Margins]/VBoxContainer/Effects - Container")
+enemiesContainer = NodePath("Margin/Content [Margins]/VBoxContainer/Enemies - Container")
+rewardsContainer = NodePath("Margin/Content [Margins]/VBoxContainer/Rewards - Container")
+waypointGroup = ExtResource("3_yxhvx")
+
+[node name="Background" type="NinePatchRect" parent="."]
+modulate = Color(0.133333, 0.137255, 0.137255, 1)
+layout_mode = 2
+texture = ExtResource("1_xdd30")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Border" type="NinePatchRect" parent="Margin"]
+layout_mode = 2
+texture = ExtResource("2_yi24l")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Content [Margins]" type="MarginContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin/Content [Margins]"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Name - Whitespace" type="TextureRect" parent="Margin/Content [Margins]/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name - Label" type="RichTextLabel" parent="Margin/Content [Margins]/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font=res://_lib/Fonts/FNT_LanaPixel_S11.ttf][font_size=11][center]Albern Forest"
+fit_content = true
+
+[node name="-----Divider 0-----" type="TextureRect" parent="Margin/Content [Margins]/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_aewbb")
+
+[node name="Effects - Label" type="Label" parent="Margin/Content [Margins]/VBoxContainer"]
+layout_mode = 2
+text = "word_effects"
+label_settings = ExtResource("6_efu1r")
+horizontal_alignment = 1
+
+[node name="Effects - Container" type="HFlowContainer" parent="Margin/Content [Margins]/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ItemSlot" parent="Margin/Content [Margins]/VBoxContainer/Effects - Container" instance=ExtResource("4_2wiim")]
+layout_mode = 2
+
+[node name="ItemSlot2" parent="Margin/Content [Margins]/VBoxContainer/Effects - Container" instance=ExtResource("4_2wiim")]
+layout_mode = 2
+
+[node name="Effects - Whitespace" type="TextureRect" parent="Margin/Content [Margins]/VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="-----Divider 1-----" type="TextureRect" parent="Margin/Content [Margins]/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_aewbb")
+
+[node name="Enemies - Label" type="Label" parent="Margin/Content [Margins]/VBoxContainer"]
+layout_mode = 2
+text = "word_enemies"
+label_settings = ExtResource("6_efu1r")
+horizontal_alignment = 1
+
+[node name="Enemies - Container" type="HFlowContainer" parent="Margin/Content [Margins]/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ItemSlot" parent="Margin/Content [Margins]/VBoxContainer/Enemies - Container" instance=ExtResource("4_2wiim")]
+layout_mode = 2
+
+[node name="Enemies - Whitespace" type="TextureRect" parent="Margin/Content [Margins]/VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="-----Divider 2-----" type="TextureRect" parent="Margin/Content [Margins]/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_aewbb")
+
+[node name="Rewards - Label" type="Label" parent="Margin/Content [Margins]/VBoxContainer"]
+layout_mode = 2
+text = "word_rewards"
+label_settings = ExtResource("6_efu1r")
+horizontal_alignment = 1
+
+[node name="Rewards - Container" type="HBoxContainer" parent="Margin/Content [Margins]/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ItemSlot" parent="Margin/Content [Margins]/VBoxContainer/Rewards - Container" instance=ExtResource("4_2wiim")]
+layout_mode = 2
+
+[node name="ItemSlot2" parent="Margin/Content [Margins]/VBoxContainer/Rewards - Container" instance=ExtResource("4_2wiim")]
+layout_mode = 2
+
+[node name="ItemSlot3" parent="Margin/Content [Margins]/VBoxContainer/Rewards - Container" instance=ExtResource("4_2wiim")]
+layout_mode = 2
+
+[node name="Rewards - Whitespace" type="TextureRect" parent="Margin/Content [Margins]/VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Margin/Content [Margins]/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin/Content [Margins]/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="Reward Desc" parent="Margin/Content [Margins]/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_gy35p")]
+layout_mode = 2
+
+[node name="Reward Desc2" parent="Margin/Content [Margins]/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_gy35p")]
+layout_mode = 2
+
+[node name="Reward Desc3" parent="Margin/Content [Margins]/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_gy35p")]
+layout_mode = 2

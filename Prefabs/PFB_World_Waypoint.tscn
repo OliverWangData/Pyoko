@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxy2l65xwytuf"]
+
+[ext_resource type="ButtonGroup" uid="uid://cr46d0a4qro0l" path="res://World/BTG_Waypoint.tres" id="1_er6g6"]
+[ext_resource type="Script" uid="uid://chl00h8toilbd" path="res://World/Waypoint.cs" id="1_flrut"]
+[ext_resource type="Texture2D" uid="uid://b3emllhrf1u32" path="res://Assets/World/Waypoint/SPR_Waypoint_Cleared.png" id="2_h1e6t"]
+[ext_resource type="Texture2D" uid="uid://dw4jy1c4w1ann" path="res://Assets/World/Waypoint/SPR_Waypoint_Pressed.png" id="3_30p1u"]
+[ext_resource type="BitMap" uid="uid://qnujng6lg60u" path="res://Assets/World/Waypoint/BMP_Waypoint.png" id="4_aco45"]
+
+[node name="Waypoint" type="TextureButton"]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 3.0
+toggle_mode = true
+action_mode = 0
+button_mask = 3
+button_group = ExtResource("1_er6g6")
+texture_normal = ExtResource("2_h1e6t")
+texture_pressed = ExtResource("3_30p1u")
+texture_hover = ExtResource("3_30p1u")
+texture_click_mask = ExtResource("4_aco45")
+script = ExtResource("1_flrut")

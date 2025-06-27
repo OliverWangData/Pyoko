@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PhysicsBlueprint" load_steps=2 format=3 uid="uid://hgexkns77xv8"]
+
+[ext_resource type="Script" uid="uid://b5bq4ys72ackp" path="res://Core/Physics/PhysicsBlueprint.cs" id="1_sr2vu"]
+
+[resource]
+script = ExtResource("1_sr2vu")
+Notes = ""
+Shape = 0
+ShapeParameter1 = 4.0
+ShapeParameter2 = 0.0
+Offset = Vector2(0, -4)
+CollisionLayers = 16
+CollisionMasks = 16
+enableEnterMonitor = false
+enableExitMonitor = false
+enableContinuousMonitor = false
+IsCollideable = true

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Transform" load_steps=3 format=3 uid="uid://cdl4c5jf824r8"]
+
+[ext_resource type="Script" uid="uid://de5pfavhboriw" path="res://_lib/Engine/Godot/Apps/ProceduralGenerator/Samplers/Transform.cs" id="1_4q7lt"]
+[ext_resource type="Resource" uid="uid://c02fyu6efuyiw" path="res://_dev/WorldGeneration/Terrain/PGN_Terrain_AB0_Warp.tres" id="1_ioeic"]
+
+[resource]
+script = ExtResource("1_4q7lt")
+Scale = 2250.0
+Offset = Vector2(14, 0)
+Sampler = ExtResource("1_ioeic")

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PhysicsBlueprint" load_steps=2 format=3 uid="uid://b2y2esc06bewk"]
+
+[ext_resource type="Script" uid="uid://b5bq4ys72ackp" path="res://Core/Physics/PhysicsBlueprint.cs" id="1_n5k0f"]
+
+[resource]
+script = ExtResource("1_n5k0f")
+Notes = "8x8 ally character. Allies only collide with themselves"
+Shape = 0
+ShapeParameter1 = 4.0
+ShapeParameter2 = 0.0
+Offset = Vector2(0, -4)
+CollisionLayers = 4
+CollisionMasks = 5
+enableEnterMonitor = false
+enableExitMonitor = false
+enableContinuousMonitor = false
+IsCollideable = true

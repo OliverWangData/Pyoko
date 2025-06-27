@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Noise" load_steps=2 format=3 uid="uid://cbvy05fc1aybe"]
+
+[ext_resource type="Script" uid="uid://c5f2jkk81ycy0" path="res://_lib/Engine/Godot/Apps/ProceduralGenerator/Samplers/Noise.cs" id="1_mb7fl"]
+
+[resource]
+script = ExtResource("1_mb7fl")
+NoiseType = 1
+Scale = 0.24
+Offset = Vector2(0, 0)
+Seed = 0.0

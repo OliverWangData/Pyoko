@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://hln04etepj7j"]
+
+[ext_resource type="Shader" path="res://Assets/World/Default.gdshader" id="1_dml65"]
+
+[resource]
+shader = ExtResource("1_dml65")
+shader_parameter/IsCanvasGroup = false
+shader_parameter/canvasGroupBaseScreenResolution = Vector2(480, 270)
+shader_parameter/PixelOutline = false
+shader_parameter/PixelOutlineFXThickness = 1.0
+shader_parameter/PixelOutlineFXColor = Color(1, 1, 1, 1)
+shader_parameter/WindFX = true
+shader_parameter/WindFXDirection = null
+shader_parameter/WindFXIntensity = 0.3
+shader_parameter/WindFXStiffness = 0.674
+shader_parameter/WindSpeed = 0.4
+shader_parameter/WindFXOctaves = 4
+shader_parameter/WindFXPersistence = 1.25
+shader_parameter/WindFXLacunarity = 1.75

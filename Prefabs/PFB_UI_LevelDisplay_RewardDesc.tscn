@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dom3v00rw8mpy"]
+
+[node name="Reward Desc" type="RichTextLabel"]
+bbcode_enabled = true
+text = "[font=res://_lib/Fonts/FNT_LanaPixel_S11.ttf][font_size=11]- Contain xyz"
+fit_content = true

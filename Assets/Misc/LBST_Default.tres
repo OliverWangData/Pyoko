@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bxj6i61oeb55m"]
+
+[ext_resource type="FontFile" uid="uid://dv6c875dcmgu1" path="res://_lib/Fonts/FNT_LanaPixel_S11.ttf" id="1_4o4fj"]
+
+[resource]
+font = ExtResource("1_4o4fj")
+font_size = 11

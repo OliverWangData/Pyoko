@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BorderFade" load_steps=3 format=3 uid="uid://dii0u1gimjk7n"]
+
+[ext_resource type="Script" uid="uid://cb1k3kha2unx4" path="res://_lib/Engine/Godot/Apps/ProceduralGenerator/Algorithms/BorderFade.cs" id="1_63lye"]
+[ext_resource type="Resource" uid="uid://cdl4c5jf824r8" path="res://_dev/WorldGeneration/Terrain/PGN_Terrain_AB1_Transform.tres" id="1_tf1vb"]
+
+[resource]
+script = ExtResource("1_63lye")
+BorderSize = 200.0
+Sampler = ExtResource("1_tf1vb")

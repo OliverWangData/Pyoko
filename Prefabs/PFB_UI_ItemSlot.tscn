@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6nqcph2d7k65"]
+
+[ext_resource type="Script" uid="uid://cum5jomgti7ak" path="res://UI/Items/ItemSlot.cs" id="1_3gime"]
+[ext_resource type="Texture2D" uid="uid://c7k0mm3a5hj70" path="res://_lib/Sprites/Shapes/SPR_Square_Rounded_Empty_R5T1.png" id="1_4yhjy"]
+[ext_resource type="Texture2D" uid="uid://b2vpltxyeruia" path="res://Assets/Items/SPR_Item_Unknown.png" id="2_3dmen"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lnb1"]
+atlas = ExtResource("2_3dmen")
+region = Rect2(5, 6, 14, 12)
+
+[node name="ItemSlot" type="MarginContainer" node_paths=PackedStringArray("icon")]
+custom_minimum_size = Vector2(26, 26)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -454.0
+offset_bottom = -244.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3gime")
+icon = NodePath("MarginContainer/Icon")
+
+[node name="Border" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_4yhjy")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="Icon" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_8lnb1")
+stretch_mode = 3

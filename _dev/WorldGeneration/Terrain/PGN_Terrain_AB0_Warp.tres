@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Warp" load_steps=4 format=3 uid="uid://c02fyu6efuyiw"]
+
+[ext_resource type="Resource" uid="uid://dpmggsow55fpq" path="res://_dev/WorldGeneration/Terrain/PGN_Terrain_A1_Base_Fbm.tres" id="1_4ecug"]
+[ext_resource type="Script" uid="uid://dbwhmmns6ki2k" path="res://_lib/Engine/Godot/Apps/ProceduralGenerator/Samplers/Warp.cs" id="1_hgijr"]
+[ext_resource type="Resource" uid="uid://cnxqtwgan4rpr" path="res://_dev/WorldGeneration/Terrain/PGN_Terrain_B1_Shift_Fbm.tres" id="2_0mqtx"]
+
+[resource]
+script = ExtResource("1_hgijr")
+Offset = Vector2(0, 0)
+Layers = 1
+Strength = 0.12
+BaseSampler = ExtResource("1_4ecug")
+ShiftSampler = ExtResource("2_0mqtx")

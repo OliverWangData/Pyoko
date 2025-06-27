@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CircleFade" load_steps=3 format=3 uid="uid://mmfuputft7ky"]
+
+[ext_resource type="Resource" uid="uid://cdl4c5jf824r8" path="res://_dev/WorldGeneration/Terrain/PGN_Terrain_AB1_Transform.tres" id="1_c813h"]
+[ext_resource type="Script" uid="uid://djm1ss4aoskp6" path="res://_lib/Engine/Godot/Apps/ProceduralGenerator/Algorithms/CircleFade.cs" id="1_nxm5i"]
+
+[resource]
+script = ExtResource("1_nxm5i")
+CircleRadius = 128.0
+FadeSize = 40.0
+Sampler = ExtResource("1_c813h")

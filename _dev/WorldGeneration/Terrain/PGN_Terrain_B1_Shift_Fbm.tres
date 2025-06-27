@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Fbm" load_steps=3 format=3 uid="uid://cnxqtwgan4rpr"]
+
+[ext_resource type="Script" uid="uid://c3qd20almlqrc" path="res://_lib/Engine/Godot/Apps/ProceduralGenerator/Samplers/Fbm.cs" id="1_06b8e"]
+[ext_resource type="Resource" uid="uid://cbvy05fc1aybe" path="res://_dev/WorldGeneration/Terrain/PGN_Terrain_B0_Shift_Noise.tres" id="1_24xgu"]
+
+[resource]
+script = ExtResource("1_06b8e")
+Offset = Vector2(0, 0)
+Octaves = 10
+Persistance = 0.5
+Lacunarity = 2.0
+Sampler = ExtResource("1_24xgu")

@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=3 uid="uid://844yko8r64ui"]
+
+[ext_resource type="Texture2D" uid="uid://boe2veqkv6woa" path="res://_lib/Sprites/Shapes/SPR_Square_Rounded_R3.png" id="1_4a78o"]
+[ext_resource type="Script" uid="uid://c128xo4loho6m" path="res://UI/Items/ItemSlotToolTip.cs" id="1_y4084"]
+[ext_resource type="Texture2D" uid="uid://cuj2niix0nfvs" path="res://_lib/Sprites/Shapes/SPR_Square_Rounded_Empty_R3T1.png" id="2_iwjsi"]
+[ext_resource type="PackedScene" uid="uid://c6nqcph2d7k65" path="res://Prefabs/PFB_UI_ItemSlot.tscn" id="3_la0yi"]
+[ext_resource type="Texture2D" uid="uid://cub3oheloec17" path="res://_lib/Sprites/Shapes/SPR_Dot.png" id="4_cy2oj"]
+
+[node name="ItemSlot Tooltip" type="MarginContainer" node_paths=PackedStringArray("slot")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_right = -374.0
+offset_bottom = -211.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y4084")
+slot = NodePath("Margin/Content [Margin]/HBoxContainer/CenterContainer/ItemSlot")
+
+[node name="Background" type="NinePatchRect" parent="."]
+modulate = Color(0.133333, 0.137255, 0.137255, 1)
+layout_mode = 2
+texture = ExtResource("1_4a78o")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Border" type="NinePatchRect" parent="Margin"]
+layout_mode = 2
+texture = ExtResource("2_iwjsi")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Content [Margin]" type="MarginContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Margin/Content [Margin]"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Margin/Content [Margin]/HBoxContainer"]
+layout_mode = 2
+
+[node name="ItemSlot" parent="Margin/Content [Margin]/HBoxContainer/CenterContainer" instance=ExtResource("3_la0yi")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin/Content [Margin]/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="Whitespace" type="TextureRect" parent="Margin/Content [Margin]/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="Margin/Content [Margin]/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font=res://_lib/Fonts/FNT_LanaPixel_S11.ttf][font_size=11][center]Gorillo"
+fit_content = true
+
+[node name="Divider" type="TextureRect" parent="Margin/Content [Margin]/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_cy2oj")
+
+[node name="Description" type="RichTextLabel" parent="Margin/Content [Margin]/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font=res://_lib/Fonts/FNT_LanaPixel_S11.ttf][font_size=11][center]This is a big monke."
+fit_content = true

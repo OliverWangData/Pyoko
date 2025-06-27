@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://bglbexhhjdcse"]
+
+[ext_resource type="Texture2D" uid="uid://c7orct6t7mnkr" path="res://Assets/Characters/SPRS_Pyoko.png" id="1_0sdw8"]
+[ext_resource type="Material" uid="uid://bqjuglm3lf5pc" path="res://Assets/VFX/PPM_Fire.tres" id="2_go1we"]
+[ext_resource type="Material" uid="uid://obcbo7lmldcn" path="res://Assets/VFX/PPM_Steam.tres" id="3_c2ole"]
+[ext_resource type="Material" uid="uid://cxt2gh5v7keam" path="res://Assets/VFX/PPM_Water.tres" id="4_5soke"]
+[ext_resource type="Material" uid="uid://3qbnro451cjm" path="res://Assets/VFX/PPM_Water_Subemitter.tres" id="5_gm7kk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poj5d"]
+atlas = ExtResource("1_0sdw8")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu5re"]
+atlas = ExtResource("1_0sdw8")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h4xu2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poj5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu5re")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yfkaf"]
+particle_flag_disable_z = true
+direction = Vector3(1, -1, 0)
+spread = 18.0
+initial_velocity_min = 10.0
+initial_velocity_max = 15.0
+gravity = Vector3(0, 10, 0)
+
+[node name="MAP Particles" type="Node2D"]
+position = Vector2(19, -10)
+
+[node name="Fire" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fire"]
+sprite_frames = SubResource("SpriteFrames_h4xu2")
+autoplay = "default"
+frame_progress = 0.4411
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Fire"]
+amount = 48
+lifetime = 0.5
+process_material = ExtResource("2_go1we")
+
+[node name="Confused" type="Node2D" parent="."]
+position = Vector2(36, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Confused"]
+sprite_frames = SubResource("SpriteFrames_h4xu2")
+autoplay = "default"
+frame_progress = 0.878348
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Confused"]
+amount = 48
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_yfkaf")
+
+[node name="Steam" type="Node2D" parent="."]
+position = Vector2(12, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Steam"]
+sprite_frames = SubResource("SpriteFrames_h4xu2")
+autoplay = "default"
+frame_progress = 0.0415376
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Steam"]
+amount = 48
+process_material = ExtResource("3_c2ole")
+
+[node name="Water" type="Node2D" parent="."]
+position = Vector2(24, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Water"]
+sprite_frames = SubResource("SpriteFrames_h4xu2")
+autoplay = "default"
+frame_progress = 0.0415376
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Water"]
+amount = 4
+sub_emitter = NodePath("../GPUParticles2D Subemitter")
+lifetime = 0.2
+process_material = ExtResource("4_5soke")
+
+[node name="GPUParticles2D Subemitter" type="GPUParticles2D" parent="Water"]
+amount = 3
+lifetime = 0.15
+process_material = ExtResource("5_gm7kk")

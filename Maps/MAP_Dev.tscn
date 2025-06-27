@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://byjfnv6gg0pxd"]
+
+[ext_resource type="Script" uid="uid://b7qk1vncuglmv" path="res://Core/Bootstrap/Game.cs" id="1_wekh5"]
+[ext_resource type="Script" uid="uid://dqjobbbkk138a" path="res://Core/FollowTargetableCamera2D.cs" id="2_po5wa"]
+[ext_resource type="Texture2D" uid="uid://bc6ray30qp6ud" path="res://icon.svg" id="3_sqdo1"]
+
+[node name="Dev" type="Node2D"]
+
+[node name="Bootstrap" type="Node2D" parent="."]
+script = ExtResource("1_wekh5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_po5wa")
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(147, 85)
+texture = ExtResource("3_sqdo1")
