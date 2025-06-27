@@ -1,6 +1,10 @@
 # Pyoko
 
-A performance-focused Survivors-like game prototype built in Godot 4.x using C#, featuring:
+A performance-focused Survivors-like game prototype built in Godot 4.x using C#
+
+<img src="https://github.com/OliverWangData/Pyoko/Media/MainImage.png" alt="screenshot of game map" width="100%"/> 
+
+Featuring:
 - Custom physics engine supporting 20,000+ moving entities
 - Tilemap-based procedural placement of assets, enabling deterministic but varied environment details
 - CSV-driven database system for content/data management
